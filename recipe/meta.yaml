@@ -41,7 +41,6 @@ about:
   summary: A simple and flexible way to generate Circos 2D track plot images for genomic data
     visualization is implemented in this package.
   license_family: GPL3
-  license_file: LICENSE
 extra:
    recipe-maintainers:
     - dpryan79
