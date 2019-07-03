@@ -1,5 +1,4 @@
-{% set version = '1.2.0' %}
-
+{% set version = '1.2.1' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -8,46 +7,62 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: RCircos_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/RCircos_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/RCircos/RCircos_{{ version }}.tar.gz
-
-  sha256: 7fd06e2efc33b5c30fc4ba3945b04021f255ba4ffcc394348df7488b9394444a
+    - {{ cran_mirror }}/src/contrib/RCircos_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/RCircos/RCircos_{{ version }}.tar.gz
+  sha256: 3b9489ab05ea83ead99ca6e4a1e6830467a2064779834aff1317b42bd41bb8fd
 
 build:
+  merge_build_host: True  # [win]
+  number: 0
   noarch: generic
-  number: 1001
-
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
-
   run:
     - r-base
 
 test:
   commands:
-    - $R -e "library('RCircos')"  # [not win]
+    - $R -e "library('RCircos')"           # [not win]
     - "\"%R%\" -e \"library('RCircos')\""  # [win]
 
 about:
-  home: https://cran.r-project.org/package=RCircos
+  home: http://bitbucket.org/henryhzhang/rcircos
   license: GPL (>= 2)
-  summary: A simple and flexible way to generate Circos 2D track plot images for genomic data
-    visualization is implemented in this package.
+  summary: 'A simple and flexible way to generate Circos 2D track plot images for genomic data
+    visualization is implemented in this package. The types of plots include: heatmap,
+    histogram, lines, scatterplot, tiles and plot items for further decorations include
+    connector, link (lines and ribbons), and text (gene) label. All functions require
+    only R graphics package that comes with R base installation.  '
   license_family: GPL3
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+
 extra:
-   recipe-maintainers:
-    - dpryan79
+  recipe-maintainers:
+    - conda-forge/r
     - MathiasHaudgaard
     - FrodePedersen
     - ArneKr
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
+
+# Package: RCircos
+# Type: Package
+# Title: Circos 2D Track Plot
+# Version: 1.2.1
+# Date: 2019-03-10
+# Author: Hongen Zhang
+# Maintainer: Hongen Zhang <hzhang.henry@gmail.com>
+# Description: A simple and flexible way to generate Circos 2D track plot images for genomic data visualization is implemented in this package. The types of plots include: heatmap, histogram, lines, scatterplot, tiles and plot items for further decorations include connector, link (lines and ribbons), and text (gene) label. All functions require only R graphics package that comes with R base installation.
+# License: GPL (>= 2)
+# Depends: R (>= 2.10)
+# URL: http://bitbucket.org/henryhzhang/rcircos
+# NeedsCompilation: no
+# Packaged: 2019-03-12 16:32:41 UTC; hzhang
+# Repository: CRAN
+# Date/Publication: 2019-03-12 21:06:27 UTC
