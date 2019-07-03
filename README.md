@@ -1,21 +1,28 @@
 About r-rcircos
 ===============
 
-Home: https://cran.r-project.org/package=RCircos
+Home: http://bitbucket.org/henryhzhang/rcircos
 
 Package license: GPL (>= 2)
 
 Feedstock license: BSD 3-Clause
 
-Summary: A simple and flexible way to generate Circos 2D track plot images for genomic data visualization is implemented in this package.
+Summary: A simple and flexible way to generate Circos 2D track plot images for genomic data visualization is implemented in this package. The types of plots include: heatmap, histogram, lines, scatterplot, tiles and plot items for further decorations include connector, link (lines and ribbons), and text (gene) label. All functions require only R graphics package that comes with R base installation.  
 
 
 
 Current build status
 ====================
 
-All platforms:
-[![noarch](https://img.shields.io/circleci/project/github/conda-forge/r-rcircos-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/r-rcircos-feedstock)
+
+<table><tr><td>All platforms:</td>
+    <td>
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1513&branchName=master">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-rcircos-feedstock?branchName=master">
+      </a>
+    </td>
+  </tr>
+</table>
 
 Current release info
 ====================
@@ -48,6 +55,8 @@ conda search r-rcircos --channel conda-forge
 
 About conda-forge
 =================
+
+[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
@@ -103,3 +112,12 @@ In order to produce a uniquely identifiable distribution:
  * If the version of a package **is** being increased, please remember to return
    the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
    back to 0.
+
+Feedstock Maintainers
+=====================
+
+* [@ArneKr](https://github.com/ArneKr/)
+* [@FrodePedersen](https://github.com/FrodePedersen/)
+* [@MathiasHaudgaard](https://github.com/MathiasHaudgaard/)
+* [@conda-forge/r](https://github.com/conda-forge/r/)
+
