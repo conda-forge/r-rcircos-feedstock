@@ -1,11 +1,11 @@
-About r-rcircos
-===============
+About r-rcircos-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rcircos-feedstock/blob/main/LICENSE.txt)
 
 Home: http://bitbucket.org/henryhzhang/rcircos
 
 Package license: GPL (>= 2)
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rcircos-feedstock/blob/main/LICENSE.txt)
 
 Summary: A simple and flexible way to generate Circos 2D track plot images for genomic data visualization is implemented in this package. The types of plots include: heatmap, histogram, lines, scatterplot, tiles and plot items for further decorations include connector, link (lines and ribbons), and text (gene) label. All functions require only R graphics package that comes with R base installation.  
 
